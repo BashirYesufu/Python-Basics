@@ -4,8 +4,8 @@ age = input("What is your current age?")
 
 #Write your code below this line 👇
 
-days_left = (90 * 365) - (int(age) * 365)
-weeks_left = (90 * 52) - (int(age) * 52)
 years_left = 90 - int(age)
+weeks_left = years_left * 52
+days_left = years_left * 365
 
-print(f"You have {days_left} days, {weeks_left} weeks and {years_left} left")
+print(f"You have {days_left} days, {weeks_left} weeks and {years_left} years left")
