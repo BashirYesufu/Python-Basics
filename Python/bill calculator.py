@@ -6,8 +6,9 @@
 #Tip: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
 
 #Write your code below this line 👇
+print("Welcome to the tip calculator!")
 bill = input("What was the total bill? ₦")
-percent = input("What percentage tip would you like to give? 10, 12, 15? ")
+percent = input("What percentage tip would you like to give? ")
 people = input("How many people are going to split the bill? ")
 
 total_bill_percent = (float(bill) * float(percent)) / 100
