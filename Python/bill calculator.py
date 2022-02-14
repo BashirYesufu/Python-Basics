@@ -14,6 +14,7 @@ people = input("How many people are going to split the bill? ")
 total_bill_percent = (float(bill) * float(percent)) / 100
 total_bill = float(bill) + total_bill_percent
 pay_per_person = total_bill / float(people)
+final_bill = "{:.2f}".format(pay_per_person)
 
-message = f"Each person should pay: ₦{round(pay_per_person, 2)}"
+message = f"Each person should pay: ₦{final_bill}"
 print(message)
