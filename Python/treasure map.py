@@ -11,7 +11,7 @@ position = input("Where do you want to put the treasure? ")
 horizontal = int(position[0])
 vertical = int(position[1])
 
-
+map[vertical - 1][horizontal - 1] = "X"
 
 
 
