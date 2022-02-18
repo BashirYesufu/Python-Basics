@@ -8,7 +8,6 @@ display = []
 word_length = len(chosen_word)
 for letter in chosen_word:
   display += "_"
-print(display)
   
 guess = input("Guess a letter: ").lower()
 
