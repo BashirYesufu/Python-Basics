@@ -1,17 +1,24 @@
-#Step 1
 import random
 word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
-print(chosen_word)
-
-display = []
 word_length = len(chosen_word)
-for letter in chosen_word:
-  display += "_"
-  
-guess = input("Guess a letter: ").lower()
 
-for position in range(word_length):
-  if chosen_word[position] == guess:
-    display[position] = chosen_word[position]
-print(display)
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
+
+#Create blanks
+display = []
+for _ in range(word_length):
+    display += "_"
+
+while "_" in display:
+  guess = input("Guess a letter: ").lower()
+  
+  #Check guessed letter
+  for position in range(word_length):
+      letter = chosen_word[position]
+      # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+      if letter == guess:
+          display[position] = letter
+  
+  print(display)
