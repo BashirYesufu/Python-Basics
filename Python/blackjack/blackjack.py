@@ -35,6 +35,7 @@
 #11 is the Ace.
 import random
 from replit import clear
+from art import logo
 
 # Add to the computer or user cards
 def deal_card():
@@ -69,6 +70,8 @@ def compare(user_score, computer_score):
     return "You lost 😤"
     
 def play_game():
+  print(logo)
+  
   user_cards = []
   computer_cards = []
   game_over = False
