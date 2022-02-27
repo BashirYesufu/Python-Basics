@@ -9,8 +9,9 @@
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
 from random import randint
+from art import logo
 
-
+print(logo)
 
 # Compare the guess and answer for correctness
 def check_answer(guess, answer):
@@ -42,7 +43,7 @@ def game():
   print(f"You have {turns} attempts left to guess the number.")
   
   while turns > 0:
-    guess = int (input("Make a guess"))
+    guess = int (input("Make a guess: "))
     check_answer(guess, answer)
     if not check_answer(guess, answer):
       turns -= 1
