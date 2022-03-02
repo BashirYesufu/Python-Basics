@@ -5,4 +5,4 @@ This repo contains the basics of learning python language. This is a companion o
 
 </br>
 
-<img alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Python-Basics/main/V1.jpg" width="100" height="100" />
+<img alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Python-Basics/main/V1.jpg" width="100%" height="100%" />
