@@ -5,4 +5,4 @@ This repo contains the basics of learning python language. This is a companion o
 
 </br>
 
-<img align="centre" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/AR-Dice/main/Documentation/image 3.jpg" width="400" height="600" />
+<img alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/Python-Basics/main/V1.jpg" width=100% height="70% />
