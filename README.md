@@ -5,4 +5,4 @@ This repo contains the basics of learning python language. This is a companion o
 
 </br>
 
-<p align="right"> <img src="https://github-readme-stats.vercel.app/api?username=BashirYesufu&show_icons=true&theme=gotham" alt="BashirYesufu" />
+<img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/AR-Dice/main/Documentation/image 3.jpg" width="400" height="600" />
