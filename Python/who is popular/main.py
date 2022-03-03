@@ -26,13 +26,11 @@ def compare_answer(input):
   highest_popularity = check_popularity()
   if input == 'a':
     if first['follower_count'] == highest_popularity:
-      print(f"You're right! {first['name']} has {first['follower_count']} million followers.")
       return True
     else:
       return False
   elif input == 'b':
     if second['follower_count'] == highest_popularity:
-      print(f"You're right! {second['name']} has {second['follower_count']} million followers.")
       return True
     else:
       return False
@@ -49,16 +47,19 @@ while should_continue:
   
   # Collect User input
   user_answer = input(f"Who has more followers on instagram? Type 'A' for {first['name']} or 'B' for {second['name']}:\n").lower()
+
+  # Clear screen in between rounds
+  clear()
   
   # Increment score
-    
-  
   if compare_answer(user_answer):
     score += 1
-    print(f"Your score is {score}")
+    if user_answer == 'a':
+      print(f"You're right! {first['name']} has {first['follower_count']} million followers. Your score is {score}")
+    else:
+      print(f"You're right! {second['name']} has {second['follower_count']} million followers. Your score is {score}")
     first = second
     second = data[randint(0, len(data) - 1)]
-    clear()
   else:
     print(f"Sorry, that was wrong. Your final score is {score}. Game Over.")
     should_continue = False
