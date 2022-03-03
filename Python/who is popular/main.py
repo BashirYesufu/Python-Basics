@@ -50,7 +50,7 @@ while should_continue:
 
   # Clear screen in between rounds
   clear()
-  
+  print(logo)
   # Increment score
   if compare_answer(user_answer):
     score += 1
