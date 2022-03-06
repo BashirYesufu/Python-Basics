@@ -8,7 +8,7 @@ continue_dispensing = True
 def check_resources(drink_ingredients):
     """"Returns if the ingredients left can make the selected drink type"""
     for item in drink_ingredients:
-        if drink_ingredients[item] >= resources[item]:
+        if drink_ingredients[item] > resources[item]:
             print(f"Sorry, there is not enough {item}")
             return False
     return True
@@ -24,8 +24,26 @@ def process_coins():
     return total
 
 
+def is_transaction_successful(coins_received, drink_cost):
+    """Returns if the payment is accepted ar money received is insufficient"""
+    if coins_received >= drink_cost:
+        change = round(coins_received - drink_cost, 2)
+        global profit_made
+        profit_made += drink_cost
+        if not change == 0.00:
+            print(f"Here is your change ${change}")
+        return True
+    else:
+        print(f"Sorry, insufficient payment. Money refunded.")
+        return False
+
+
+def make_coffee():
+    """This makes the required drink"""
+
+
 while continue_dispensing:
-    choice = input("What would you like? (espresso, latte or cappuccino): ")
+    choice = input("What would you like? (espresso, latte or cappuccino): ").lower()
     if choice == "off":
         continue_dispensing = False
     elif choice == "report":
@@ -34,7 +52,9 @@ while continue_dispensing:
         print(f"{resources['coffee']}g of coffee")
         print(f"${profit_made} profit made.")
     else:
-        coffee_type = MENU(choice)
-        if check_resources(coffee_type):
-            process_coins()
+        coffee_type = MENU[choice]
+        if check_resources(coffee_type['ingredients']):
+            payment = process_coins()
+            if is_transaction_successful(payment, coffee_type['cost']):
+                make_coffee()
 
