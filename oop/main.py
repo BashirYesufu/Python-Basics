@@ -1,3 +1,13 @@
-import turtle
+from turtle import Turtle, Screen
 
-print(turtle)
+timmy = Turtle()
+print(timmy)
+timmy.shape("turtle")
+timmy.color("coral")
+timmy.forward(200)
+timmy.left(300)
+timmy.left(500)
+
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
