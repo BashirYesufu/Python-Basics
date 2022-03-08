@@ -16,7 +16,16 @@ class QuizBrain:
     def check_answer(self, user_answer, correct_answer):
         if user_answer == correct_answer:
             self.score += 1
-            print(f"Correct answer.\nYour score is {self.score}\n\n")
+            print(f"Correct answer 😎\nYour score is {self.score}\n\n")
+            self.compliment_player()
         else:
-            print(f"wrong answer.\nYour score is {self.score}\n\n")
+            print(f"Wrong answer 😭\nYour score is {self.score}\n\n")
         self.question_number += 1
+
+    def compliment_player(self):
+        if self.score == 10:
+            print("You're Sharp. Welcome to the bronze league 👏🏾")
+        elif self.score == 25:
+            print("You're Clear. Welcome to the Silver league 👏🏾👏🏾")
+        elif self.score == 50:
+            print("Welcome to the Gold League. The League of extra-ordinary individuals 👏🏾👏🏾👏🏾")
