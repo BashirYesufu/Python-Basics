@@ -1,11 +1,13 @@
 from turtle import Turtle, Screen
 import heroes
+import random
 
 print(heroes.gen())
 
 timmy = Turtle()
 timmy.shape('turtle')
 timmy.color("blue")
+colors = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
 
 
 def draw_shape(num_sides):
@@ -15,10 +17,9 @@ def draw_shape(num_sides):
         timmy.right(degrees)
 
 
-sides = 3
-for _ in range(8):
+for sides in range(3, 11):
+    timmy.color(random.choice(colors))
     draw_shape(sides)
-    sides += 1
 
 screen = Screen()
 screen.exitonclick()
