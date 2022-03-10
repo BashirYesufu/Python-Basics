@@ -1,11 +1,19 @@
 from turtle import Turtle, Screen
+import heroes
 
-timmy = Turtle()
+print(heroes.gen())
+
+timmy  = Turtle()
 timmy.shape('turtle')
 timmy.color("blue")
-for _ in range(4):
-    timmy.forward(100)
-    timmy.right(90)
+for _ in range(10):
+    timmy.forward(10)
+    timmy.color("white")
+    timmy.forward(10)
+    timmy.color("blue")
+
 
 screen = Screen()
 screen.exitonclick()
+
+
