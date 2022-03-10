@@ -6,20 +6,15 @@ print(heroes.gen())
 
 timmy = Turtle()
 timmy.shape('turtle')
-timmy.color("blue")
 colors = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+directions = [0, 90, 180, 270]
 
 
-def draw_shape(num_sides):
-    degrees = 360 / num_sides
-    for _ in range(num_sides):
-        timmy.forward(100)
-        timmy.right(degrees)
-
-
-for sides in range(3, 11):
+for _ in range(200):
     timmy.color(random.choice(colors))
-    draw_shape(sides)
+    timmy.forward(20)
+    timmy.setheading(random.choice(directions))
+    timmy.pensize(20)
 
 screen = Screen()
 screen.exitonclick()
