@@ -3,15 +3,22 @@ import heroes
 
 print(heroes.gen())
 
-timmy  = Turtle()
+timmy = Turtle()
 timmy.shape('turtle')
 timmy.color("blue")
-for _ in range(10):
-    timmy.forward(10)
-    timmy.penup()
-    timmy.forward(10)
-    timmy.pendown()
 
+
+def draw_shape(num_sides):
+    degrees = 360 / num_sides
+    for _ in range(num_sides):
+        timmy.forward(100)
+        timmy.right(degrees)
+
+
+sides = 3
+for _ in range(8):
+    draw_shape(sides)
+    sides += 1
 
 screen = Screen()
 screen.exitonclick()
