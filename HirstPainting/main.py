@@ -11,6 +11,7 @@ timmy.speed(20)
 directions = [0, 90, 180, 270]
 
 
+# Generate random colors using R G B
 def get_random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
