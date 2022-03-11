@@ -16,12 +16,17 @@ def get_random_color():
 
 
 timmy.speed(20)
-while not timmy.heading() == 350:
-    timmy.color(get_random_color())
-    timmy.circle(100)
-    current_heading = timmy.heading()
-    timmy.setheading(current_heading + 10)
 
+
+def draw_circle(gap_size):
+    for _ in range(int(350 / gap_size)):
+        timmy.color(get_random_color())
+        timmy.circle(100)
+        current_heading = timmy.heading()
+        timmy.setheading(current_heading + gap_size)
+
+
+draw_circle(5)
 screen = t.Screen()
 screen.exitonclick()
 
