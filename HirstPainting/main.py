@@ -12,5 +12,19 @@ color_list = [(202, 164, 110), (240, 245, 241), (236, 239, 243), (149, 75, 50), 
               (107, 127, 153), (176, 192, 208), (168, 99, 102), (66, 64, 60), (219, 178, 183), (178, 198, 202),
               (112, 139, 141), (254, 194, 0)]
 
-timmy.dot(20, random.choice(color_list))
+timmy.setheading(225)
+timmy.penup()
+timmy.forward(350)
+timmy.setheading(0)
+timmy.pendown()
+
+for _ in range(10):
+    timmy.dot(20, random.choice(color_list))
+    timmy.penup()
+    timmy.forward(50)
+    timmy.pendown()
+    timmy.dot(20, random.choice(color_list))
+
+screen = t.Screen()
+screen.exitonclick()
 
