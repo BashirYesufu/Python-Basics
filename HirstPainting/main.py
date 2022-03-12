@@ -18,12 +18,39 @@ timmy.forward(350)
 timmy.setheading(0)
 timmy.pendown()
 
-for _ in range(10):
-    timmy.dot(20, random.choice(color_list))
+
+def go_forward():
+    for _ in range(10):
+        timmy.dot(20, random.choice(color_list))
+        timmy.penup()
+        timmy.forward(50)
+        timmy.pendown()
+        timmy.dot(20, random.choice(color_list))
+    timmy.setheading(90)
     timmy.penup()
     timmy.forward(50)
     timmy.pendown()
-    timmy.dot(20, random.choice(color_list))
+    timmy.setheading(180)
+
+
+def go_backwards():
+    for _ in range(10):
+        timmy.dot(20, random.choice(color_list))
+        timmy.penup()
+        timmy.forward(50)
+        timmy.pendown()
+        timmy.dot(20, random.choice(color_list))
+    timmy.setheading(90)
+    timmy.penup()
+    timmy.forward(50)
+    timmy.pendown()
+    timmy.setheading(0)
+
+
+for _ in range(5):
+    go_forward()
+    go_backwards()
+
 
 screen = t.Screen()
 screen.exitonclick()
