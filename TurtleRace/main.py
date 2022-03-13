@@ -10,7 +10,7 @@ turtles = []
 
 y_position = -70
 for color in colors:
-    new_turtle = Turtle(shape="car")
+    new_turtle = Turtle(shape="turtle")
     new_turtle.color(color)
     new_turtle.penup()
     new_turtle.goto(x=-230, y=y_position)
@@ -22,6 +22,14 @@ if user_bet:
 
 while keep_racing:
     for turtle in turtles:
+        if turtle.xcor() > 230:
+            keep_racing = False
+            winner = turtle.fillcolor()
+            if user_bet == winner:
+                print("You won!")
+            else:
+                print(f"You lost. The {turtle.fillcolor()} turtle won")
+
         distance = random.randint(0, 10)
         turtle.forward(distance)
 
