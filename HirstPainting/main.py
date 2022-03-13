@@ -20,6 +20,7 @@ timmy.forward(350)
 timmy.setheading(0)
 
 
+# Method to paint forwards
 def go_forward():
     for _ in range(10):
         timmy.dot(20, random.choice(color_list))
@@ -30,6 +31,7 @@ def go_forward():
     timmy.setheading(180)
 
 
+# Method to paint backwards
 def go_backwards():
     for _ in range(10):
         timmy.dot(20, random.choice(color_list))
