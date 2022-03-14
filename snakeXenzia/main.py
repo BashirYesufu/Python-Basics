@@ -4,6 +4,7 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Xenzia")
+screen.tracer(0)
 
 x_axis = 0
 y_axis = 0
@@ -19,6 +20,7 @@ for _ in range(3):
 
 game_is_on = True
 while game_is_on:
+    screen.update()
     for segment in snake_body:
         segment.forward(20)
 
