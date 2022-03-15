@@ -46,10 +46,8 @@ while game_is_on:
         end_game()
 
     # Detect tail collision
-    for part in snake.snake_body:
-        if part == snake.head:
-            pass
-        elif snake.head.distance(part) < 10:
+    for part in snake.snake_body[1:]:
+        if snake.head.distance(part) < 10:
             end_game()
 
 screen.exitonclick()
