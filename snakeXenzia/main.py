@@ -21,6 +21,12 @@ screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 game_is_on = True
+
+def end_game():
+    global  game_is_on
+    game_is_on = False
+    scoreboard.end_game()
+
 while game_is_on:
     screen.update()
     time.sleep(0.2)
@@ -34,7 +40,13 @@ while game_is_on:
 
     # Detect wall collision
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_is_on = False
-        scoreboard.end_game()
+        end_game()
+
+    # Detect tail collision
+    for part in snake.snake_body:
+        if part == snake.head:
+            pass
+        elif snake.head.distance(part) < 10:
+            end_game()
 
 screen.exitonclick()
