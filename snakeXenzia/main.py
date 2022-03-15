@@ -22,10 +22,13 @@ screen.onkey(snake.right, "Right")
 
 game_is_on = True
 
+
+# End game play
 def end_game():
-    global  game_is_on
+    global game_is_on
     game_is_on = False
     scoreboard.end_game()
+
 
 while game_is_on:
     screen.update()
