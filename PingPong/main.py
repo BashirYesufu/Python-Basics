@@ -26,4 +26,6 @@ while game_is_on:
     screen.update()
     ball.move()
 
+    # Detect collision
+
 screen.exitonclick()
