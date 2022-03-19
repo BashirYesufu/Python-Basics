@@ -33,6 +33,13 @@ class Snake:
         new_segment.goto(x=x_axis, y=y_axis)
         self.snake_body.append(new_segment)
 
+    def reset(self):
+        for part in self.snake_body:
+            part.goto(1000, 1000)
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
+
     # Move snake till game ends
     def move(self):
         for segment_number in range(len(self.snake_body) - 1, 0, -1):
