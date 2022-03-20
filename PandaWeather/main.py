@@ -11,5 +11,30 @@
 
 import pandas
 
-pandas.read_csv("weather_data.csv")
+data = pandas.read_csv("weather_data.csv")
 print(data["temp"])
+
+data_dict = data.to_dict()
+print(data_dict)
+
+temp_list = data["temp"].to_list()
+print(temp_list)
+
+maxi = data["temp"].max()
+print(maxi)
+
+# Get data in columns
+print(data.condition)
+print(data["condition"])
+
+# Get data in rows
+print(data[data.day == "Monday"])
+print(data[data.temp == data.temp.max()])
+
+# Create a pandas Dataframe
+data_dictionary = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76, 56, 65]
+}
+new_dataframe = pandas.DataFrame(data_dictionary)
+new_dataframe.to_csv("new_data.csv")
