@@ -1,1 +1,3 @@
 Amazon | bash@mail.com | 1234
+Google | bash@mail.com | Hello
+Deimos | bash@mail.com | 123456
