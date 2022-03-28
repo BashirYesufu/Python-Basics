@@ -52,18 +52,22 @@ def save():
                                        message=f"These are the details entered: \nEmail: {email_data}"
                                                f"\nPassword: {password_data} \nIs it ok to save?")
         if is_ok:
-            with open("data.json", "r") as data_file:
+            try:
+                with open("data.json", "r") as data_file:
 
-                # Reading Old data
-                data = json.load(data_file)
-
+                    # Reading Old data
+                    data = json.load(data_file)
+            except FileNotFoundError:
+                with open("data.json", "w") as data_file:
+                    json.dump(new_data, data_file, indent=4)
+            else:
                 # Updating old data with new
                 data.update(new_data)
 
-            with open("data.json", "w") as data_file:
-                # Saving updated data
-                json.dump(data, data_file, indent=4)
-
+                with open("data.json", "w") as data_file:
+                    # Saving updated data
+                    json.dump(data, data_file, indent=4)
+            finally:
                 # Clear the text fields after getting the content
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
